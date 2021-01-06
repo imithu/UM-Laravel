@@ -1,0 +1,21 @@
+{
+    "name": "imithu/um",
+    "description": "Advance user management in PHP",
+    "authors": [
+        {
+            "name": "Mahmudul Hasan Mithu",
+            "email": "imithu@imithu.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "UM\\": [
+                "UM"
+            ]
+        }
+    }
+}
