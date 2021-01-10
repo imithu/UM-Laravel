@@ -1,3 +1,10 @@
+# [Version 0.1.2](https://github.com/imithu/UM/releases/tag/v0.1.2) - 2021-Jan-11
+## Changed
+- security of login method is improved
+
+
+
+
 # [Version 0.1.1](https://github.com/imithu/UM/releases/tag/v0.1.1) - 2021-Jan-10
 ## Changed
 - improved dialing_code method
