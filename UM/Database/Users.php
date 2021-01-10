@@ -163,25 +163,6 @@ class Users
     }
 
 
-    /**
-     * 
-     * get email by username
-     * 
-     * @param string $username
-     * 
-     * @return int $email
-     * @return bool false if not found
-     * 
-     * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
-     */
-    public static function email_username( string $username )
-    {
-        return DB::select('SELECT email FROM UM_users WHERE    `username`=? ORDER BY id DESC', [$username])[0]->email ?? false;
-    }
-
-
 
     /**
      * set new email by user_id
