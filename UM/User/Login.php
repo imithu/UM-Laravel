@@ -20,18 +20,23 @@ class Login
      * @return bool true  - login        successful
      *              false - login is not successful
      * 
-     * @version 0.0.0
+     * @version 0.1.2
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
     public static function login( $config, $primary )
     {
-            if( $config['captcha_google_recaptcha_v2____verify']==true ){
-                $captcha_is_verified = Valid::captcha_google_recaptcha_v2( $config['captcha_google_recaptcha_v2____response_id'] );
-                if( $captcha_is_verified==false ){
-                    return false;
-                }
+        
+        if( $config['captcha_google_recaptcha_v2____verify']==true ){
+            $captcha_is_verified = Valid::captcha_google_recaptcha_v2( $config['captcha_google_recaptcha_v2____response_id'] );
+            if( $captcha_is_verified==false ){
+                return false;
             }
+        }
+
+        foreach( $primary as $key=>$value ){
+            $primary[$key] = htmlspecialchars( $value );
+        }
 
 
         $user_id = Users::id_username( $primary['username_or_email'] );
