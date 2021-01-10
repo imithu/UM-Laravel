@@ -31,9 +31,10 @@ class General_country
      * 
      * @param string $letters_2
      * 
+     * 
      * @return string $country_name
      * 
-     * @version 0.1.0
+     * @version 0.1.1
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
@@ -47,7 +48,8 @@ class General_country
                 break;
             }
         }
-        return $country_name;
+
+        return $country_name ?? '';
     }
 
 
@@ -59,7 +61,7 @@ class General_country
      * 
      * @return string $dialing_code
      * 
-     * @version 0.1.0
+     * @version 0.1.1
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
@@ -67,7 +69,6 @@ class General_country
     {
         $countries = self::all();
 
-        $dialing_code='+000';
         foreach( $countries as $country ){
             if( $country->letters_2==strtoupper($letters_2) ){
                 $dialing_code= json_decode($country->dialing_code)[0];
@@ -75,7 +76,7 @@ class General_country
             }
         }
 
-        return $dialing_code;
+        return $dialing_code ?? '+000' ;
     }
 
 
