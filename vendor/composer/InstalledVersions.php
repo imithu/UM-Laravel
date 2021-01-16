@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'c9482559525f940359a2ebbaf51a2cc482efdd7f',
+    'reference' => '44456021006f2440b244b572b78de643c77090e3',
     'name' => 'imithu/um-laravel',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'c9482559525f940359a2ebbaf51a2cc482efdd7f',
+      'reference' => '44456021006f2440b244b572b78de643c77090e3',
     ),
   ),
 );

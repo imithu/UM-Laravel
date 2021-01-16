@@ -8,9 +8,7 @@
         }
     ],
     "license": "MIT",
-    "require": {
-        "php": ">=7.4"
-    },
+    "require": {},
     "autoload": {
         "psr-4": {
             "UM\\": [
