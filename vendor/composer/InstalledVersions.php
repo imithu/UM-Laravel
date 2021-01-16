@@ -1,5 +1,15 @@
 <?php
 
+
+
+
+
+
+
+
+
+
+
 namespace Composer;
 
 use Composer\Semver\VersionParser;
@@ -14,24 +24,24 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-main',
-    'version' => 'dev-main',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => '5d5e5ab12bf0b2e13a22afc02a49806b1e6f95c4',
+    'reference' => 'c9482559525f940359a2ebbaf51a2cc482efdd7f',
     'name' => 'imithu/um-laravel',
   ),
   'versions' => 
   array (
     'imithu/um-laravel' => 
     array (
-      'pretty_version' => 'dev-main',
-      'version' => 'dev-main',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => '5d5e5ab12bf0b2e13a22afc02a49806b1e6f95c4',
+      'reference' => 'c9482559525f940359a2ebbaf51a2cc482efdd7f',
     ),
   ),
 );
