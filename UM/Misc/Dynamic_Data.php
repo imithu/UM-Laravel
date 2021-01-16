@@ -32,40 +32,6 @@ class Dynamic_Data
 
 
     /**
-     * Generate random name
-     * 
-     * mainly created for generating file name
-     * 
-     * @param string  $user_id   ( optional )
-     * @param string  $file_name ( optional )
-     * @param string  $salt      ( optional )
-     * 
-     * @return string random name
-     * 
-     * 
-     * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
-     */
-    public static function random_name( $user_id='', $file_name='', $salt='' )
-    {
-        /*
-            user_id:   92
-            salt:      eg. profile_picture_name
-            date:      2021101142925
-            rand:      246257978
-            uniqid:    9fab6dc07d367
-            file_name: baby3.jpg
-        */
-        date_default_timezone_set('UTC');
-        $random_name = (string) $user_id.'_'.$salt.date('_YnjGis_').rand(100000000,999000999).'_'.uniqid().'_'.$file_name;
-        $random_name = preg_replace('/(\s+)/','_s_', $random_name);
-        $random_name = trim($random_name);
-        return $random_name;
-    }
-
-
-    /**
      * Generate temp_otp
      * 
      * mainly created for generating temp otp
