@@ -31,30 +31,7 @@ class Dynamic_Data
     }
 
 
-    /**
-     * Generate temp_otp
-     * 
-     * mainly created for generating temp otp
-     * 
-     * @param int $digit
-     * 
-     * @return string temp_otp
-     * 
-     * 
-     * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
-     */
-    public static function temp_otp( int $digit )
-    {
-        $otp='';
 
-        for($i=0; $i<$digit; $i++){
-            $otp.=rand(1,9);
-        }
-
-        return (string) $otp;
-    }
 
 
 }
