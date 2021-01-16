@@ -122,25 +122,6 @@ class Users
 
 
 
-    /**
-     * set new email by user_id
-     * 
-     * @param int    $user_id
-     * @param string $email
-     * 
-     * 
-     * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
-     */
-
-    public static function email_set( int $user_id, string $email )
-    {
-        DB::update( 'UPDATE UM_users SET `email`=? WHERE `id`=?', [$email, $user_id] );
-    }
-
-
-
 
     /**
      * 
