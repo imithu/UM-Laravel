@@ -8,30 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class Users
 {
-
-    /**
-     * 
-     * Add a user in database users table
-     * 
-     * @param string $username
-     * @param string $email
-     * @param string $password
-     * 
-     * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
-     */
-    public static function user_add( string $username, string $email, string $password )
-    {
-        $password = password_hash( $password, PASSWORD_DEFAULT );
-
-        date_default_timezone_set('UTC');
-        $datetime = date('Y-m-d H:i:s');
-        DB::insert('INSERT INTO UM_users  VALUES( NULL, ?, ?, ?, ?)', [$username, $email, $password, $datetime]);
-    }
-
-
-
     /**
      * 
      * get user id by username
