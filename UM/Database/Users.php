@@ -96,7 +96,7 @@ class Users
      */
     public static function set( int $id, string $columnName, string $value )
     {
-        DB::update( "UPDATE UM_users SET {$columnName}=? WHERE `id`=?", [ trim($value), $id ] );
+        DB::update( "UPDATE UM_users SET {$columnName}=? WHERE `id`=?", [ htmlspecialchars(trim($value)), $id ] );
     }
 
 
