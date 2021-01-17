@@ -45,4 +45,23 @@ class Usermeta
     {
         return DB::select('SELECT meta_value FROM UM_usermeta WHERE   (`user_id`=? AND `meta_key`=?) ORDER BY id DESC', [$user_id, htmlspecialchars(trim($meta_key))])[0]->meta_value ?? '';
     }
+
+
+
+
+    /**
+     * remove all meta data by user_id and meta_key
+     * 
+     * @param int    $user_id
+     * @param string $meta_key
+     * 
+     * 
+     * @version 1.0.0
+     * @since 1.0.0
+     * @author Mahmudul Hasan Mithu
+     */
+    public static function remove( int $user_id, string $meta_key )
+    {
+        DB::delete( 'DELETE FROM UM_usermeta WHERE   (`user_id`=? AND `meta_key`=?)', [$user_id, htmlspecialchars(trim($meta_key))] );
+    }
 }
