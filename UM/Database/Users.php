@@ -17,7 +17,7 @@ class Users
      * @return int $id
      *             0 if not found
      * 
-     * @version 0.0.0
+     * @version 1.0.0
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
@@ -37,13 +37,13 @@ class Users
      * @return int $id
      *             0 if not found
      * 
-     * @version 0.0.0
+     * @version 1.0.0
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
     public static function id_email( string $email )
     {
-        $id = DB::select('SELECT id FROM UM_users WHERE    `email`=? ORDER BY id DESC', [$email])[0]->id ?? 0;
+        $id = DB::select('SELECT id FROM UM_users WHERE    `email`=? ORDER BY id DESC', [ htmlspecialchars(trim($email)) ])[0]->id ?? 0;
         return $id;
     }
 
