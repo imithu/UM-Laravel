@@ -40,6 +40,10 @@ class Syntax
 
     /**
      * check email syntax is valid or not
+     * -----------------------------------
+     * rules:
+     * - must pass /((.+)(@)(.+)(\.)(.+))/
+     * - no space, ', ", <, >, & character
      * 
      * 
      * @param string $email
@@ -55,11 +59,12 @@ class Syntax
      */
     public static function email( string $email )
     {
-        $email = htmlspecialchars(trim($email));
-
         preg_match( '/((.+)(@)(.+)(\.)(.+))/', $email, $m );
         if( count($m)>0 ){  // true -  it is an email
-            return true;
+            preg_match( '/([ \'"<>&]+)/', $email, $m );
+            if( count($m)==0 ){  // true no space, ', ", <, >, & character
+                return true;
+            }
         }
 
         return false;
