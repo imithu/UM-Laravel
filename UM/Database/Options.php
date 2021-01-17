@@ -52,4 +52,22 @@ class Options
         $meta_value = json_decode($meta_value, true);
         return $meta_value;
     }
+
+
+
+
+    /**
+     * delete an option from options table
+     * 
+     * @param string $meta_key
+     * 
+     * 
+     * @version 1.0.0
+     * @since 1.0.0
+     * @author Mahmudul Hasan Mithu
+     */
+    public static function delete( $meta_key )
+    {
+        DB::delete( 'DELETE FROM UM_options WHERE meta_key=?', [ htmlspecialchars(trim($meta_key)) ] );
+    }
 }
