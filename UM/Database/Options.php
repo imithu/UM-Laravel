@@ -29,7 +29,7 @@ class Options
      */
     public static function select( $meta_key )
     {
-        $meta_value = DB::select('SELECT meta_value FROM UM_options WHERE `meta_key`=?', [$meta_key])[0]->meta_value;
+        $meta_value = DB::select('SELECT meta_value FROM UM_options WHERE `meta_key`=?', [ htmlspecialchars(trim($meta_key)) ])[0]->meta_value;
 
         $meta_value = json_decode($meta_value, true);
         return $meta_value;
