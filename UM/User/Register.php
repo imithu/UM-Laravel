@@ -36,6 +36,9 @@ class Register
      * @param string $userstatus
      * 
      * 
+     * @return array $SR - i.  [ 'error'=>true,  'username_error'=>(bool), 'email_error'=>(bool) ]
+     *                     ii. [ 'error'=>false, 'temp_otp'=>'value', 'user_id'=>value ]
+     * 
      * 
      * @since   1.0.0
      * @version 1.0.0
@@ -51,7 +54,7 @@ class Register
          * @param string $email
          * 
          * 
-         * @return array $SR [ $username_error=>true|false,    $email_error=>true|false ]
+         * @return array $SR [ $username_error=>(bool),    $email_error=>(bool) ]
          * 
          * @since   1.0.0
          * @version 1.0.0
@@ -102,6 +105,8 @@ class Register
          * 
          * @param string $usertype
          * @param string $userstatus
+         * 
+         * @return array $SR [ $temp_otp=>'value',    $user_id=>value ]
          * 
          * @since   1.0.0
          * @version 1.0.0
