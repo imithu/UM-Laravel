@@ -9,17 +9,17 @@ use Illuminate\Support\Facades\DB;
 class General
 {
     /**
-     * get all the data based on meta_key from UM_general table
+     * select all the data based on meta_key from UM_general table
      * 
      * @param string $meta_key
      * 
      * @return array all data of the meta_key
      * 
-     * @version 0.0.0
+     * @version 1.0.0
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
-    public static function get_all( $meta_key )
+    public static function select_all( $meta_key )
     {
         $get_all = DB::select('SELECT meta_value FROM UM_general WHERE `meta_key`=? ;', [$meta_key])[0]->meta_value;
         return json_decode($get_all, true);
