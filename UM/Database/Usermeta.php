@@ -50,7 +50,7 @@ class Usermeta
 
 
     /**
-     * remove all meta data by user_id and meta_key
+     * delete all meta data by user_id and meta_key
      * 
      * @param int    $user_id
      * @param string $meta_key
@@ -60,7 +60,7 @@ class Usermeta
      * @since 1.0.0
      * @author Mahmudul Hasan Mithu
      */
-    public static function remove( int $user_id, string $meta_key )
+    public static function delete( int $user_id, string $meta_key )
     {
         DB::delete( 'DELETE FROM UM_usermeta WHERE   (`user_id`=? AND `meta_key`=?)', [$user_id, htmlspecialchars(trim($meta_key))] );
     }
