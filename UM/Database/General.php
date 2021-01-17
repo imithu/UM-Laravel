@@ -28,20 +28,20 @@ class General
 
 
     /**
-     * get the id of json meta_value by value
+     * select the id of json meta_value by value
      * 
      * @param string $meta_key
      * @param string $value
      * 
      * @return int id of the value of a json meta_value
      * 
-     * @version 0.0.0
+     * @version 1.0.0
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
-    public static function get_id( string $meta_key, string $value ): int
+    public static function select_id( string $meta_key, string $value ): int
     {
-        $pair_all = self::get_all( $meta_key );
+        $pair_all = self::select_all( $meta_key );
 
         foreach( $pair_all as $pair_id=>$pair_value ){
             if( $pair_value==$value ){
