@@ -34,15 +34,15 @@ class Usermeta
      * @param int $user_id
      * @param string $meta_key
      * 
-     * @return string $meta_value
-     * @return bool false if not found
+     * @return string meta_value
+     *                if not found then return ''
      * 
-     * @version 0.0.0
+     * @version 1.0.0
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
     public static function get( int $user_id, string $meta_key )
     {
-        return DB::select('SELECT meta_value FROM UM_usermeta WHERE   (`user_id`=? AND `meta_key`=?) ORDER BY id DESC', [$user_id, $meta_key])[0]->meta_value ?? false;
+        return DB::select('SELECT meta_value FROM UM_usermeta WHERE   (`user_id`=? AND `meta_key`=?) ORDER BY id DESC', [$user_id, htmlspecialchars(trim($meta_key))])[0]->meta_value ?? '';
     }
 }
