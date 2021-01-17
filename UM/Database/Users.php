@@ -78,4 +78,24 @@ class Users
         return $user_id;
     }
 
+
+
+
+    /**
+     * 
+     * get value of a column by id
+     * 
+     * @param int    $id
+     * @param string $columnName
+     * 
+     * @return  string  value
+     * 
+     * @version 1.0.0
+     * @since 1.0.0
+     * @author Mahmudul Hasan Mithu
+     */
+    public static function get( $id, $columnName )
+    {
+        return  DB::select("SELECT {$columnName} FROM UM_users WHERE    `id`=? ORDER BY id DESC", [  $id ] )[0]->$columnName ?? '';
+    }
 }
