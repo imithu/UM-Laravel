@@ -10,9 +10,9 @@ class Account
      * 
      * @param int $user_id
      * 
+     * @since   0.0.0
      * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function delete( int $user_id )
     {
@@ -31,9 +31,9 @@ class Account
      *                     - >0  logged in user_id
      * 
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function current_user_id()
     {
