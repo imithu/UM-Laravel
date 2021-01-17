@@ -19,7 +19,7 @@ class General
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
-    public static function select_all( $meta_key )
+    public static function select_all( string $meta_key )
     {
         $get_all = DB::select('SELECT meta_value FROM UM_general WHERE `meta_key`=? ;', [$meta_key])[0]->meta_value;
         return json_decode($get_all, true);
