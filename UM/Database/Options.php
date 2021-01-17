@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Options
 {
-    public static function set()
+    public static function insert()
     {
 
     }
