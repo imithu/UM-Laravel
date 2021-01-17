@@ -80,6 +80,27 @@ class Users
 
 
 
+    
+    /**
+     * 
+     * set value of a column by id
+     * 
+     * @param int    $id
+     * @param string $columnName
+     * @param string $value
+     * 
+     * 
+     * @version 1.0.0
+     * @since 1.0.0
+     * @author Mahmudul Hasan Mithu
+     */
+    public static function set( int $id, string $columnName, string $value )
+    {
+        DB::update( "UPDATE UM_users SET {$columnName}=? WHERE `id`=?", [ trim($value), $id ] );
+    }
+
+
+
 
     /**
      * 
@@ -94,7 +115,7 @@ class Users
      * @since 1.0.0
      * @author Mahmudul Hasan Mithu
      */
-    public static function get( $id, $columnName )
+    public static function get( int $id, string $columnName )
     {
         return  DB::select("SELECT {$columnName} FROM UM_users WHERE    `id`=? ORDER BY id DESC", [  $id ] )[0]->$columnName ?? '';
     }
