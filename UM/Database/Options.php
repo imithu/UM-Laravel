@@ -8,9 +8,27 @@ use Illuminate\Support\Facades\DB;
 
 class Options
 {
-    public static function insert()
+    /**
+     * insert array value in options table
+     * 
+     * @param string $meta_key
+     * @param array  $meta_value = [ key=>value, key=>value ]
+     * 
+     * 
+     * @version 1.0.0
+     * @since 1.0.0
+     * @author Mahmudul Hasan Mithu
+     */
+    public static function insert( string $meta_key, array $meta_value )
     {
+        $meta_key = htmlspecialchars(trim($meta_key));
 
+        foreach( $meta_value as $key=>$value ){
+            $meta_value[$key] = htmlspecialchars($value);       // don't trim side space here.
+        }
+        $meta_value = json_encode($meta_value);
+        
+        DB::insert( 'INSERT INTO UM_options (meta_key, meta_value) VALUES( ?, ? ) ', [ $meta_key, $meta_value ] );
     }
 
 
