@@ -78,24 +78,4 @@ class Users
         return $user_id;
     }
 
-
-    /**
-     * 
-     * get username by id
-     * 
-     * @param string $id
-     * 
-     * @return int $username
-     * @return bool false if not found
-     * 
-     * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
-     */
-    public static function username_id( int $id )
-    {
-        $username = DB::select('SELECT username FROM UM_users WHERE    `id`=? ORDER BY id DESC', [$id])[0]->username ?? false;
-        return $username;
-    }
-
 }
