@@ -56,20 +56,20 @@ class General
 
 
     /**
-     * get the name of json meta_value by id
+     * select the name of json meta_value by id
      * 
      * @param string $meta_key
      * @param int    $id
      * 
      * @return string name of the value of a json meta_value
      * 
-     * @version 0.0.0
+     * @version 1.0.0
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
-    public static function get_value( string $meta_key, int $id ): string
+    public static function select_value( string $meta_key, int $id ): string
     {
-        $pair_all = self::get_all( $meta_key );
+        $pair_all = self::select_all( $meta_key );
 
         foreach( $pair_all as $pair_id=>$pair_value ){
             if( $pair_id==$id ){
