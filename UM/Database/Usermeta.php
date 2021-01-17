@@ -10,7 +10,7 @@ class Usermeta
 {
 
     /**
-     * Add meta data of a user
+     * Insert meta data of an user
      * 
      * @param int    $user_id
      * @param string $meta_key
@@ -20,7 +20,7 @@ class Usermeta
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
-    public static function set( int $user_id, string $meta_key, string $meta_value )
+    public static function insert( int $user_id, string $meta_key, string $meta_value )
     {
         date_default_timezone_set('UTC');
         $datetime = date('Y-m-d H:i:s');
