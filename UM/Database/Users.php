@@ -23,7 +23,7 @@ class Users
      */
     public static function id_username( string $username )
     {
-        $id = DB::select('SELECT id FROM UM_users WHERE    `username`=? ORDER BY id DESC', [$username])[0]->id ?? 0;
+        $id = DB::select('SELECT id FROM UM_users WHERE    `username`=? ORDER BY id DESC', [ htmlspecialchars(trim($username)) ])[0]->id ?? 0;
         return $id;
     }
 
