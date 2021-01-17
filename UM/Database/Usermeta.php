@@ -12,11 +12,11 @@ class Usermeta
     /**
      * Add meta data of a user
      * 
-     * @param int $user_id
+     * @param int    $user_id
      * @param string $meta_key
      * @param string $meta_value
      * 
-     * @version 0.0.0
+     * @version 1.0.0
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
@@ -24,7 +24,7 @@ class Usermeta
     {
         date_default_timezone_set('UTC');
         $datetime = date('Y-m-d H:i:s');
-        DB::insert('INSERT INTO UM_usermeta  VALUES( NULL, ?, ?, ?, ?)', [$user_id, $meta_key, $meta_value, $datetime]);
+        DB::insert('INSERT INTO UM_usermeta  VALUES( NULL, ?, ?, ?, ?)', [$user_id, htmlspecialchars(trim($meta_key)), htmlspecialchars(trim($meta_value)), $datetime]);
     }
 
 
