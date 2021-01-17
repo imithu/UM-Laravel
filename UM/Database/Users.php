@@ -120,23 +120,4 @@ class Users
         return $email;
     }
 
-
-
-    /**
-     * 
-     * get hashed password
-     * 
-     * @param int $user_id
-     * 
-     * @return string $password_hashed
-     * 
-     * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
-     */
-    public static function password_hashed_get( int $user_id )
-    {
-        return DB::select('SELECT  `password` FROM UM_users WHERE    `id`=? ORDER BY id DESC', [$user_id])[0]->password;
-    }
-
 }
