@@ -35,4 +35,34 @@ class Syntax
         }
         return false;
     }
+
+
+
+
+    /**
+     * check email syntax is valid or not
+     * 
+     * 
+     * @param string $email
+     * 
+     * @return bool  true  - if email syntax is correct
+     *               false - if email syntax is not correct
+     * 
+     * 
+     * 
+     * @since   1.0.0
+     * @version 1.0.0
+     * @author  Mahmudul Hasan Mithu
+     */
+    public static function email( string $email )
+    {
+        $email = htmlspecialchars(trim($email));
+
+        preg_match( '/((.+)(@)(.+)(\.)(.+))/', $email, $m );
+        if( count($m)>0 ){  // true -  it is an email
+            return true;
+        }
+
+        return false;
+    }
 }
