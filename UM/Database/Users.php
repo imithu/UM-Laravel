@@ -122,26 +122,6 @@ class Users
 
 
 
-
-    /**
-     * 
-     * set hashed password
-     * 
-     * @param int    $user_id
-     * @param string $password
-     * 
-     * 
-     * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
-     */
-    public static function password_hashed_set( int $user_id, string $password )
-    {
-        $password = password_hash( $password, PASSWORD_DEFAULT );
-        DB::update( 'UPDATE UM_users SET `password`=? WHERE `id`=?', [$password, $user_id] );
-    }
-
-
     /**
      * 
      * get hashed password
