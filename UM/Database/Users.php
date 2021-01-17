@@ -83,7 +83,7 @@ class Users
     
     /**
      * 
-     * set value of a column by id
+     * update value of a column by id
      * 
      * @param int    $id
      * @param string $columnName
@@ -94,7 +94,7 @@ class Users
      * @since 1.0.0
      * @author Mahmudul Hasan Mithu
      */
-    public static function set( int $id, string $columnName, string $value )
+    public static function update( int $id, string $columnName, string $value )
     {
         DB::update( "UPDATE UM_users SET {$columnName}=? WHERE `id`=?", [ htmlspecialchars(trim($value)), $id ] );
     }
