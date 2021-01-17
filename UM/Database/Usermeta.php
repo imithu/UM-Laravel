@@ -29,7 +29,7 @@ class Usermeta
 
 
     /**
-     * get meta_value by user_id and meta_key
+     * select meta_value by user_id and meta_key
      * 
      * @param int $user_id
      * @param string $meta_key
@@ -41,7 +41,7 @@ class Usermeta
      * @since 0.0.0
      * @author Mahmudul Hasan Mithu
      */
-    public static function get( int $user_id, string $meta_key )
+    public static function select( int $user_id, string $meta_key )
     {
         return DB::select('SELECT meta_value FROM UM_usermeta WHERE   (`user_id`=? AND `meta_key`=?) ORDER BY id DESC', [$user_id, htmlspecialchars(trim($meta_key))])[0]->meta_value ?? '';
     }
