@@ -10,7 +10,7 @@ class Syntax
      * -------------------------------------
      * rules:
      * - minimum 2 characters
-     * - no space
+     * - no space, ', ", <, >, & character
      * 
      * 
      * @param string $username
@@ -26,9 +26,8 @@ class Syntax
      */
     public static function username( string $username )
     {
-        $username = trim($username);
         if( strlen($username)>1 ){
-            preg_match( '/ /', $username, $m );
+            preg_match( '/([ \'"<>&]+)/', $username, $m );
             if( count($m)==0 ){
                 return true;
             }
