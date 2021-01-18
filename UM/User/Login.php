@@ -13,11 +13,14 @@ class Login
 {
     /**
      * login a user
+     * 
      * @param string $username_or_email
      * @param string $password
      * @param string $remember_me
      * @param string $usertype
      * 
+     * @return boolean - true  - login successful
+     *                   false - login failed
      * 
      * @since   1.0.0
      * @version 1.0.0
