@@ -4,7 +4,6 @@ namespace UM\User;
 
 
 use UM\Database\Users;
-use UM\Database\Usermeta;
 use UM\Verify\User;
 
 
