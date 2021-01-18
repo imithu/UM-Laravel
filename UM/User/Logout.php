@@ -11,15 +11,14 @@ class Logout
      * current user logout
      * 
      * 
-     * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @since   0.0.0
+     * @version 1.0.0
+     * @author  Mahmudul Hasan Mithu
      */
     public static function logout()
     {
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
+        if(!session_id()) session_start();
+
         if( isset($_SESSION['UM_login']) ){
             $_SESSION['UM_login'] = NULL;
         }
