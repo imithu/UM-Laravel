@@ -1,7 +1,6 @@
 <?php
 namespace UM\Verify;
 
-use Illuminate\Support\Facades\DB;
 
 class Syntax
 {
