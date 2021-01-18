@@ -40,6 +40,7 @@ class Account
     public static function current_user_id()
     {
         $SR = 0;
+        $UM_login = false;
         if(!session_id()) session_start();
 
         if( isset($_SESSION['UM_login']) ){
@@ -48,20 +49,24 @@ class Account
             $UM_login = $_COOKIE['UM_login'];
         }
 
-        $UM_login = json_decode($UM_login, true);
-        $user_id         = (int)    $UM_login['user_id'];
-        $username        = (string) $UM_login['username'];
-        $email           = (string) $UM_login['email'];
-        $password_hashed = (string) $UM_login['password_hashed'];
 
-
-        if( User::user_is_verified( $user_id ) ){
-            $db_username        = Users::select( (int) htmlspecialchars(trim($user_id)), 'username' );
-            $db_email           = Users::select( (int) htmlspecialchars(trim($user_id)), 'email' );
-            $db_password_hashed = Users::select( (int) htmlspecialchars(trim($user_id)), 'password' );
-
-            if( $username==$db_username && $email==$db_email && $password_hashed==$db_password_hashed ){
-                $SR = $user_id;
+        if( $UM_login ){
+            $UM_login = json_decode($UM_login, true);
+            
+            $user_id         = (int)    $UM_login['user_id'];
+            $username        = (string) $UM_login['username'];
+            $email           = (string) $UM_login['email'];
+            $password_hashed = (string) $UM_login['password_hashed'];
+            
+            
+            if( User::user_is_verified( $user_id ) ){
+                $db_username        = Users::select( (int) htmlspecialchars(trim($user_id)), 'username' );
+                $db_email           = Users::select( (int) htmlspecialchars(trim($user_id)), 'email' );
+                $db_password_hashed = Users::select( (int) htmlspecialchars(trim($user_id)), 'password' );
+                
+                if( $username==$db_username && $email==$db_email && $password_hashed==$db_password_hashed ){
+                    $SR = $user_id;
+                }
             }
         }
 
