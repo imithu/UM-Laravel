@@ -26,11 +26,13 @@ class User{
      */
     public static function temp_otp( int $user_id, string $temp_otp)
     {
-        $db_temp_otp = Users::select( $user_id, 'temp_otp' );
-        if( $db_temp_otp!='no_otp' && $db_temp_otp!='' && $db_temp_otp!=NULL && $db_temp_otp!=false ){
-            if( $temp_otp==$db_temp_otp ){
-                Users::update( $user_id, 'temp_otp', 'no_otp' );
-                return true;
+        if( $temp_otp!='no_otp' ){
+            $db_temp_otp = Users::select( $user_id, 'temp_otp' );
+            if( $db_temp_otp!='no_otp' && $db_temp_otp!='' && $db_temp_otp!=NULL && $db_temp_otp!=false ){
+                if( $temp_otp==$db_temp_otp ){
+                    Users::update( $user_id, 'temp_otp', 'no_otp' );
+                    return true;
+                }
             }
         }
         return false;
