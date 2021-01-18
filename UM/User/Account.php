@@ -57,14 +57,17 @@ class Account
             $username        = (string) $UM_login['username'];
             $email           = (string) $UM_login['email'];
             $password_hashed = (string) $UM_login['password_hashed'];
-            
+            $usertype        = (string) $UM_login['usertype'];
+            $userstatus      = (string) $UM_login['userstatus'];
             
             if( User::user_is_verified( $user_id ) ){
                 $db_username        = Users::select( (int) htmlspecialchars(trim($user_id)), 'username' );
                 $db_email           = Users::select( (int) htmlspecialchars(trim($user_id)), 'email' );
                 $db_password_hashed = Users::select( (int) htmlspecialchars(trim($user_id)), 'password' );
+                $db_usertype        = Users::select( (int) htmlspecialchars(trim($user_id)), 'usertype' );
+                $db_userstatus      = Users::select( (int) htmlspecialchars(trim($user_id)), 'userstatus' );
                 
-                if( $username==$db_username && $email==$db_email && $password_hashed==$db_password_hashed ){
+                if( $username==$db_username && $email==$db_email && $password_hashed==$db_password_hashed && $usertype==$db_usertype && $userstatus==$db_userstatus ){
                     $SR = $user_id;
                 }
             }
