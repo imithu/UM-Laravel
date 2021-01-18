@@ -28,12 +28,22 @@ class Login
         $SR = false;
 
         $user_id = Users::id_username_or_email( $username_or_email );
-        if( $user_id>0 && User::user_is_verified($user_id) && password_verify($password, Users::select($user_id, 'password'))  ){
+        
+        if( 
+               $user_id>0
+            && User::user_is_verified($user_id) 
+            && password_verify($password, Users::select($user_id, 'password'))
+            && $usertype==Users::select( $user_id, 'usertype' )
+            && 'active' ==Users::select( $user_id, 'userstatus' )
+        )
+        {
             $UM_login = [
                 'user_id'         => $user_id,
                 'username'        => Users::select( $user_id, 'username' ),
                 'email'           => Users::select( $user_id, 'email' ),
-                'password_hashed' => Users::select( $user_id, 'password')
+                'password_hashed' => Users::select( $user_id, 'password'),
+                'usertype'        => $usertype,
+                'userstatus'      => 'active'
             ];
             $UM_login = json_encode($UM_login);
 
@@ -45,6 +55,8 @@ class Login
             }
             $SR = true;
         }
+
+
         return $SR;
     }
 }
