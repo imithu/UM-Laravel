@@ -3,8 +3,6 @@ namespace UM\Verify;
 
 use UM\Database\Users;
 
-use Illuminate\Support\Facades\DB;
-
 
 
 class User{
