@@ -12,15 +12,6 @@ use Illuminate\Support\Facades\DB;
 
 
 
-
-use UM\User\Common;
-use UM\User\Valid;
-use UM\Misc\Dynamic_Data;
-
-use UM\Database\Usermeta;
-
-
-
 class Register
 {
 
