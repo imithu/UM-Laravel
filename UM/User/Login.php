@@ -11,8 +11,6 @@ use UM\Verify\User;
 
 class Login
 {
-
-
     /**
      * login a user
      * @param string $username_or_email
