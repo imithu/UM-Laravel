@@ -1,6 +1,8 @@
 <?php
 namespace UM\User;
 
+use UM\Verify\User;
+use UM\Database\Users;
 use Illuminate\Support\Facades\DB;
 
 class Account
@@ -37,43 +39,33 @@ class Account
      */
     public static function current_user_id()
     {
-        if (session_status() == PHP_SESSION_NONE) {
-            session_start();
-        }
-
-        if( empty($_SESSION['UM_login']) && empty($_COOKIE['UM_login']) ){
-            return 0;
-        }
+        $SR = 0;
+        if(!session_id()) session_start();
 
         if( isset($_SESSION['UM_login']) ){
             $UM_login = $_SESSION['UM_login'];
         }elseif( isset($_COOKIE['UM_login']) ){
             $UM_login = $_COOKIE['UM_login'];
         }
+
         $UM_login = json_decode($UM_login, true);
         $user_id         = (int)    $UM_login['user_id'];
         $username        = (string) $UM_login['username'];
         $email           = (string) $UM_login['email'];
         $password_hashed = (string) $UM_login['password_hashed'];
 
-        // find out user is verified or not and take action
-        $user_is_verified = self::user_is_verified( $user_id );
 
-        if( $user_is_verified==false ){
-            return 0;
-        }elseif( $user_is_verified==true ){
-            $db_username        = Users::username_id( $user_id );
-            $db_email           = Users::email_id( $user_id );
-            $db_password_hashed = Users::password_hashed_get( $user_id );
+        if( User::user_is_verified( $user_id ) ){
+            $db_username        = Users::select( (int) htmlspecialchars(trim($user_id)), 'username' );
+            $db_email           = Users::select( (int) htmlspecialchars(trim($user_id)), 'email' );
+            $db_password_hashed = Users::select( (int) htmlspecialchars(trim($user_id)), 'password' );
 
             if( $username==$db_username && $email==$db_email && $password_hashed==$db_password_hashed ){
-                return $user_id;
-            }else{
-                return 0;
+                $SR = $user_id;
             }
         }
 
         
-        return 0;
+        return $SR;
     }
 }
