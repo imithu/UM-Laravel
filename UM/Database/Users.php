@@ -17,9 +17,9 @@ class Users
      * @return int $id
      *             0 if not found
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function id_username( string $username )
     {
@@ -37,9 +37,9 @@ class Users
      * @return int $id
      *             0 if not found
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function id_email( string $email )
     {
@@ -57,9 +57,9 @@ class Users
      * @return int $id
      *             0 if not found
      * 
+     * @since   0.0.0
      * @version 0.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function id_username_or_email( string $username_or_email )
     {
@@ -90,9 +90,9 @@ class Users
      * @param string $value
      * 
      * 
+     * @since   1.0.0
      * @version 1.0.0
-     * @since 1.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function update( int $id, string $columnName, string $value )
     {
@@ -111,9 +111,9 @@ class Users
      * 
      * @return  string  value
      * 
+     * @since   1.0.0
      * @version 1.0.0
-     * @since 1.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function select( int $id, string $columnName )
     {

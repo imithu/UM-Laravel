@@ -17,9 +17,9 @@ class Unknown_Data
      * @return string random name
      * 
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function random_name( $user_id='', $file_name='', $salt='' )
     {
@@ -51,9 +51,9 @@ class Unknown_Data
      * @return string temp_otp
      * 
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function temp_otp( int $digit )
     {

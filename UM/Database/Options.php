@@ -15,9 +15,9 @@ class Options
      * @param array  $meta_value = [ key=>value, key=>value ]
      * 
      * 
+     * @since   1.0.0
      * @version 1.0.0
-     * @since 1.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function insert( string $meta_key, array $meta_value )
     {
@@ -41,9 +41,9 @@ class Options
      * 
      * @return array $meta_value
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function select( $meta_key )
     {
@@ -62,9 +62,9 @@ class Options
      * @param string $meta_key
      * 
      * 
+     * @since   1.0.0
      * @version 1.0.0
-     * @since 1.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function delete( $meta_key )
     {

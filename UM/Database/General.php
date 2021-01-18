@@ -15,9 +15,9 @@ class General
      * 
      * @return array all data of the meta_key
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function select_all( string $meta_key )
     {
@@ -35,9 +35,9 @@ class General
      * 
      * @return int id of the value of a json meta_value
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function select_id( string $meta_key, string $value ): int
     {
@@ -63,9 +63,9 @@ class General
      * 
      * @return string name of the value of a json meta_value
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function select_value( string $meta_key, int $id ): string
     {

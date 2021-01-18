@@ -16,9 +16,9 @@ class Usermeta
      * @param string $meta_key
      * @param string $meta_value
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function insert( int $user_id, string $meta_key, string $meta_value )
     {
@@ -37,9 +37,9 @@ class Usermeta
      * @return string meta_value
      *                if not found then return ''
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function select( int $user_id, string $meta_key )
     {
@@ -56,9 +56,9 @@ class Usermeta
      * @param string $meta_key
      * 
      * 
+     * @since   1.0.0
      * @version 1.0.0
-     * @since 1.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function delete( int $user_id, string $meta_key )
     {

@@ -12,9 +12,9 @@ class Modify_Data
      * 
      * @return int age   eg. 505
      * 
+     * @since   0.0.0
      * @version 1.0.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function age( $birthday )
     {

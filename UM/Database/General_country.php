@@ -15,9 +15,9 @@ class General_country
      * 
      * @return array all data of all countries
      * 
+     * @since   0.0.0
      * @version 0.1.0
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function all()
     {
@@ -34,9 +34,9 @@ class General_country
      * 
      * @return string $country_name
      * 
+     * @since   0.0.0
      * @version 0.1.1
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function country_name( string $letters_2 ): string
     {
@@ -61,9 +61,9 @@ class General_country
      * 
      * @return string $dialing_code
      * 
+     * @since   0.0.0
      * @version 0.1.1
-     * @since 0.0.0
-     * @author Mahmudul Hasan Mithu
+     * @author  Mahmudul Hasan Mithu
      */
     public static function dialing_code( string $letters_2 ): string
     {
