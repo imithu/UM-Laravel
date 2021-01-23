@@ -15,7 +15,7 @@ class Login
      * 
      * @param string $username_or_email
      * @param string $password
-     * @param string $remember_me
+     * @param string $remember_me   'true | false'
      * @param string $usertype
      * 
      * @return boolean - true  - login successful
