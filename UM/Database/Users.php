@@ -110,6 +110,7 @@ class Users
      * @param string $columnName
      * 
      * @return  string  value
+     *                  if fail then ''
      * 
      * @since   1.0.0
      * @version 1.0.0
