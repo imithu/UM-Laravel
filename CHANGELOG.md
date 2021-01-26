@@ -1,3 +1,8 @@
+# [Version 1.2.0](https://github.com/imithu/UM/releases/tag/v1.2.0) - 2021-Jan-26
+## Changed
+- security has improved for register_main method
+
+
 # [Version 1.1.0](https://github.com/imithu/UM/releases/tag/v1.1.0) - 2021-Jan-26
 ## Changed
 - username verify method has improved
