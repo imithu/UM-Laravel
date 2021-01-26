@@ -18,7 +18,7 @@ class Unknown_Data
      * 
      * 
      * @since   0.0.0
-     * @version 1.2.0
+     * @version 1.3.0
      * @author  Mahmudul Hasan Mithu
      */
     public static function random_name( $user_id='', $file_name='', $salt='' )
