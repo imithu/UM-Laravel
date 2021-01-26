@@ -1,3 +1,8 @@
+# [Version 1.1.0](https://github.com/imithu/UM/releases/tag/v1.1.0) - 2021-Jan-26
+## Changed
+- username verify method has improved
+
+
 # [Version 1.0.1](https://github.com/imithu/UM/releases/tag/v1.0.1) - 2021-Jan-18
 ## Removed
 - unnecessary code
