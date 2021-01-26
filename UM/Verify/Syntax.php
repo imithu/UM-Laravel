@@ -9,7 +9,7 @@ class Syntax
      * -------------------------------------
      * rules:
      * - minimum 2 characters
-     * - no space, ', ", <, >, & character
+     * - no space, ', ", <, >, &,      =,(,) character
      * 
      * 
      * @param string $username
@@ -20,13 +20,13 @@ class Syntax
      * 
      * 
      * @since   1.0.0
-     * @version 1.0.0
+     * @version 1.1.0
      * @author  Mahmudul Hasan Mithu
      */
     public static function username( string $username )
     {
         if( strlen($username)>1 ){
-            preg_match( '/([ \'"<>&]+)/', $username, $m );
+            preg_match( '/([ \'"<>&=()]+)/', $username, $m );
             if( count($m)==0 ){
                 return true;
             }
