@@ -5,6 +5,7 @@ namespace UM\User;
 use UM\Database\Users;
 use UM\User\Account;
 use UM\Verify\User;
+use UM\Verify\Syntax;
 use UM\Generate\Unknown_Data;
 
 use Illuminate\Support\Facades\DB;
@@ -32,13 +33,14 @@ class Register
      * 
      * 
      * @since   1.0.0
-     * @version 1.0.0
+     * @version 1.2.0
      * @author  Mahmudul Hasan Mithu
      */
     public static function register_main( string $username, string $email, string $password, string $usertype, string $userstatus )
     {
         /**
          * check any account exist or not based on username and email
+         * also check username syntax is valid or not
          * and take action
          * 
          * @param string $username
@@ -48,7 +50,7 @@ class Register
          * @return array $SR [ $username_error=>(bool),    $email_error=>(bool) ]
          * 
          * @since   1.0.0
-         * @version 1.0.0
+         * @version 1.2.0
          * @author  Mahmudul Hasan Mithu
          */
         $account_check = function( string $username, string $email )
@@ -58,16 +60,23 @@ class Register
             
 
 
-
-            $user_id = Users::id_username( $username );
-            if( $user_id>0 ){
-                if( User::user_is_verified( $user_id ) ){
-                    $username_error = true;
-                }else{
-                    Account::delete( $user_id );
+            // check username syntax is okay or not
+            if(Syntax::username($username)){
+                // check username exist or not in database
+                $user_id = Users::id_username( $username );
+                if( $user_id>0 ){
+                    if( User::user_is_verified( $user_id ) ){
+                        $username_error = true;
+                    }else{
+                        Account::delete( $user_id );
+                    }
                 }
+            }else{
+                $username_error = true;
             }
+            
 
+            // check email exist or not in database
             $user_id = Users::id_email( $email );
             if( $user_id>0 ){
                 if( User::user_is_verified( $user_id ) ){
@@ -76,6 +85,7 @@ class Register
                     Account::delete( $user_id );
                 }
             }
+            
 
 
             $SR = 
@@ -100,7 +110,7 @@ class Register
          * @return array $SR [ $temp_otp=>'value',    $user_id=>value ]
          * 
          * @since   1.0.0
-         * @version 1.0.0
+         * @version 1.2.0
          * @author  Mahmudul Hasan Mithu
          */
         $account_create = function( string $username, string $email, string $password, string $usertype, string $userstatus  )
@@ -114,7 +124,7 @@ class Register
             ( 
                 'INSERT INTO UM_users (`id`, `username`, `email`, `password`, `usertype`, `userstatus`, `email_is_verified`, `temp_otp`, `datetime` ) VALUES(NULL, ?, ?, ?, ?, ?, ?, ?, ?) ',
                                 //    [ $username, $email,  $password,   $usertype,  $userstatus,         'no',         $temp_otp,  $datetime ] 
-                                   [ $username, $email,  $password,   $usertype,  $userstatus,         'no',         $temp_otp,  $datetime ] 
+                                   [ htmlspecialchars($username), htmlspecialchars($email),  $password,   $usertype,  $userstatus,         'no',         $temp_otp,  $datetime ]
             );
 
             $user_id = Users::id_username( $username );
@@ -140,8 +150,8 @@ class Register
         ];
 
         // removed side space except password
-        $username = trim($username);
-        $email = trim($email);
+        $username = strtolower(trim($username));    // convert the username to lowercase
+        $email = strtolower(trim($email));          // convert the email    to lowercase
         $usertype = trim($usertype);
         $userstatus = trim($userstatus);
 
