@@ -1,3 +1,8 @@
+# [Version 1.3.0](https://github.com/imithu/UM/releases/tag/v1.3.0) - 2021-Jan-26
+## Changed
+- security has improved for random_name method
+
+
 # [Version 1.2.0](https://github.com/imithu/UM/releases/tag/v1.2.0) - 2021-Jan-26
 ## Changed
 - security has improved for register_main method
