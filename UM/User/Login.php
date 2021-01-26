@@ -22,13 +22,14 @@ class Login
      *                   false - login failed
      * 
      * @since   1.0.0
-     * @version 1.0.0
+     * @version 1.3.1
      * @author  Mahmudul Hasan Mithu
      */
     public static function login_main( $username_or_email, $password, $remember_me, $usertype )
     {
         $SR = false;
 
+        $username_or_email = strtolower(trim($username_or_email));
         $user_id = Users::id_username_or_email( $username_or_email );
         
         if( 
