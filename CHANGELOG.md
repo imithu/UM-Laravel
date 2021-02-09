@@ -1,3 +1,8 @@
+# [Version 1.4.0](https://github.com/imithu/UM/releases/tag/v1.4.0) - 2021-Feb-09
+## Added
+- usertype method has been added
+
+
 # [Version 1.3.1](https://github.com/imithu/UM/releases/tag/v1.3.1) - 2021-Jan-26
 ## Fixed
 - login does not working sometimes
