@@ -76,4 +76,33 @@ class Account
         
         return $SR;
     }
+
+
+
+
+    /**
+     * find out usertype by user_id
+     * if no user_id is passed then use current_user_id
+     * 
+     * @param int user_id ( optional ) ( default: current_user_id )
+     * 
+     * @return string guest | (usertype)
+     * 
+     * @since   1.4.0
+     * @version 1.4.0
+     * @author  Mahmudul Hasan Mithu
+     */
+    public static function usertype( int $user_id=NULL )
+    {
+        if($user_id==NULL)
+            $user_id=self::current_user_id();
+
+        if( $user_id>0 && User::user_is_verified( $user_id ) ){
+            $usertype = Users::select( $user_id, 'usertype' );
+            if($usertype!='')
+                return $usertype;
+        }
+        
+        return 'guest';
+    }
 }
