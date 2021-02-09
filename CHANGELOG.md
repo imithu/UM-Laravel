@@ -1,3 +1,8 @@
+# [Version 1.4.1](https://github.com/imithu/UM-Laravel/releases/tag/v1.4.1) - 2021-Feb-09
+## Improved
+- random_name method will now convert html special chars
+
+
 # [Version 1.4.0](https://github.com/imithu/UM-Laravel/releases/tag/v1.4.0) - 2021-Feb-09
 ## Added
 - usertype method has been added
