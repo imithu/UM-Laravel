@@ -18,7 +18,7 @@ class Unknown_Data
      * 
      * 
      * @since   0.0.0
-     * @version 1.3.0
+     * @version 1.4.1
      * @author  Mahmudul Hasan Mithu
      */
     public static function random_name( $user_id='', $file_name='', $salt='' )
@@ -37,7 +37,8 @@ class Unknown_Data
 
         date_default_timezone_set('UTC');
         $random_name = (string) $user_id.'_'.$salt.date('_YnjGis_').rand(100000000,999000999).'_'.uniqid().'_'.$file_name;
-        $random_name = preg_replace('/(\s+)/','_s_', $random_name);
+        $random_name = preg_replace('/(\s+)/','_s_', $random_name);           // s - space
+        $random_name = preg_replace('/([ \'"<>&=()]+)/','_h_', $random_name); // h - html special chars
         $random_name = trim($random_name);
         return $random_name;
     }
