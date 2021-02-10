@@ -1,3 +1,8 @@
+# [Version 1.5.0](https://github.com/imithu/UM-Laravel/releases/tag/v1.5.0) - 2021-Feb-10
+## Removed
+- unnecessary codes of General_country has been removed
+
+
 # [Version 1.4.1](https://github.com/imithu/UM-Laravel/releases/tag/v1.4.1) - 2021-Feb-09
 ## Improved
 - random_name method will now convert html special chars
