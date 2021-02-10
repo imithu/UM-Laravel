@@ -1,3 +1,8 @@
+# [Version 1.6.0](https://github.com/imithu/UM-Laravel/releases/tag/v1.6.0) - 2021-Feb-10
+## Added
+- unique parameter has been added in insert method
+
+
 # [Version 1.5.0](https://github.com/imithu/UM-Laravel/releases/tag/v1.5.0) - 2021-Feb-10
 ## Removed
 - unnecessary codes of General_country has been removed
